@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Client
+
+A Next.js portfolio site for showcasing a developer profile, services, projects, certifications, and contact information.
+
+## Overview
+
+This application is built with Next.js and TypeScript and uses a configuration-driven approach for branding and theme values. The visual system is intentionally centralized so colors and shared UI tokens can be updated from one place instead of being hardcoded across components.
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- CSS custom properties
+- Variable font loading via Fontsource
+- Lucide and React Icons
+
+## Project Structure
+
+- `src/app` — app shell, layout, and page entry points
+- `src/components` — reusable sections and UI building blocks
+- `src/config` — site metadata and theme configuration
+- `public/images` — local assets used in the portfolio
+
+## Theme Configuration
+
+The configurable theme is defined in `src/config/site.ts`.
+
+- `siteConfig.theme` contains the primary brand colors for the app.
+- `themeStyle` maps those values to CSS custom properties such as:
+  - `--color-background`
+  - `--color-surface`
+  - `--color-foreground`
+  - `--color-accent`
+  - `--color-muted`
+  - `--color-border`
+- Those variables are applied to the root HTML element in `src/app/layout.tsx`.
+
+To update the portfolio branding, change the values in `src/config/site.ts` instead of hardcoding colors inside component styles.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-## Learn More
+## Notes
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is structured to keep content, branding, and visual tokens separated so the portfolio can be rebranded or updated with minimal changes to presentation components.
