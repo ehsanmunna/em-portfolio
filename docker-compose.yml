@@ -1,0 +1,58 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: portfolio-mongodb
+    restart: unless-stopped
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-portfolio_admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-portfolio_password}
+      MONGO_INITDB_DATABASE: ${MONGO_DB_NAME:-portfolio}
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: [
+        "CMD-SHELL",
+        "mongosh --quiet --eval 'db.runCommand({ ping: 1 }).ok' --username $$MONGO_INITDB_ROOT_USERNAME --password $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin || mongo --quiet --eval 'db.runCommand({ ping: 1 }).ok' --username $$MONGO_INITDB_ROOT_USERNAME --password $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin"
+      ]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: portfolio-api
+    restart: unless-stopped
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    ports:
+      - "${API_PORT:-4000}:4000"
+    env_file:
+      - ./server/.env
+    environment:
+      PORT: ${PORT:-4000}
+      MONGO_HOST: ${MONGO_HOST:-mongodb}
+      MONGO_PORT: ${MONGO_PORT:-27017}
+      MONGO_DB_NAME: ${MONGO_DB_NAME:-portfolio}
+      MONGO_USERNAME: ${MONGO_USERNAME:-portfolio_admin}
+      MONGO_PASSWORD: ${MONGO_PASSWORD:-portfolio_password}
+      MONGO_URI: ${MONGO_URI:-mongodb://portfolio_admin:portfolio_password@mongodb:27017/portfolio?authSource=admin}
+      NODE_ENV: development
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "node -e \"fetch('http://localhost:4000/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+
+volumes:
+  mongodb_data:
