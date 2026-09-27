@@ -246,7 +246,7 @@ export function ContactSection() {
           ))}
         </ul>
       </div>
-      <ContactForm recipient={portfolioContent.contact.email} />
+      <ContactForm />
     </section>
   );
 }

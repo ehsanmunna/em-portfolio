@@ -1,0 +1,265 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Portfolio API",
+    "version": "1.0.0",
+    "description": "HTTP API for the portfolio service."
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "The server hosting this documentation"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get service status",
+        "operationId": "getServiceStatus",
+        "responses": {
+          "200": {
+            "description": "The API is running.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Check API and database health",
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "description": "The database is reachable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthStatus"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "The database is unavailable.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/contact": {
+      "post": {
+        "summary": "Submit a contact inquiry",
+        "operationId": "submitContactInquiry",
+        "description": "Submissions are subject to the configured origin allowlist and a limit of five requests per IP address per 15-minute window.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactSubmission"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "The contact inquiry was accepted for delivery.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["status"],
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": ["accepted"]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request body is malformed (`invalid_json`) or contact fields are invalid (`invalid_contact_request`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    { "$ref": "#/components/schemas/InvalidContactRequest" },
+                    { "$ref": "#/components/schemas/InvalidJsonRequest" }
+                  ]
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The request origin is not allowed (`origin_not_allowed`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "The request body exceeds the 16 KiB limit (`request_too_large`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "The contact request rate limit was exceeded (`rate_limit_exceeded`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Contact email delivery is unavailable (`delivery_unavailable`).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ServiceStatus": {
+        "type": "object",
+        "required": ["name", "status", "mongo"],
+        "properties": {
+          "name": { "type": "string", "example": "Portfolio API" },
+          "status": { "type": "string", "enum": ["running"] },
+          "mongo": {
+            "type": "object",
+            "required": ["host", "port", "database"],
+            "properties": {
+              "host": { "type": "string" },
+              "port": { "type": "string" },
+              "database": { "type": "string" }
+            }
+          }
+        }
+      },
+      "HealthStatus": {
+        "type": "object",
+        "required": ["status", "service", "database", "mongo"],
+        "properties": {
+          "status": { "type": "string", "enum": ["ok"] },
+          "service": { "type": "string", "enum": ["portfolio-api"] },
+          "database": { "type": "string" },
+          "mongo": {
+            "type": "object",
+            "required": ["host", "port"],
+            "properties": {
+              "host": { "type": "string" },
+              "port": { "type": "string" }
+            }
+          }
+        }
+      },
+      "HealthError": {
+        "type": "object",
+        "required": ["status", "service", "message", "error"],
+        "properties": {
+          "status": { "type": "string", "enum": ["error"] },
+          "service": { "type": "string", "enum": ["portfolio-api"] },
+          "message": { "type": "string", "enum": ["Database unavailable"] },
+          "error": { "type": "string" }
+        }
+      },
+      "ContactSubmission": {
+        "type": "object",
+        "required": ["name", "email", "message"],
+        "properties": {
+          "name": { "type": "string", "maxLength": 120 },
+          "email": { "type": "string", "format": "email", "maxLength": 254 },
+          "message": { "type": "string", "maxLength": 5000 }
+        }
+      },
+      "ApiError": {
+        "type": "object",
+        "required": ["code", "message"],
+        "properties": {
+          "code": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      },
+      "ApiErrorResponse": {
+        "type": "object",
+        "required": ["error"],
+        "properties": {
+          "error": { "$ref": "#/components/schemas/ApiError" }
+        }
+      },
+      "InvalidContactRequest": {
+        "allOf": [
+          { "$ref": "#/components/schemas/ApiErrorResponse" },
+          {
+            "type": "object",
+            "properties": {
+              "error": {
+                "allOf": [
+                  { "$ref": "#/components/schemas/ApiError" },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "code": { "type": "string", "enum": ["invalid_contact_request"] }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "InvalidJsonRequest": {
+        "allOf": [
+          { "$ref": "#/components/schemas/ApiErrorResponse" },
+          {
+            "type": "object",
+            "properties": {
+              "error": {
+                "allOf": [
+                  { "$ref": "#/components/schemas/ApiError" },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "code": { "type": "string", "enum": ["invalid_json"] }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

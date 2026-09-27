@@ -54,6 +54,12 @@ npm run dev
 
 Open http://localhost:3000 in your browser to view the app.
 
+## Contact API Configuration
+
+Set `NEXT_PUBLIC_API_BASE_URL` in the client environment before running `npm run dev` or `npm run build`. Use `http://localhost:4000` locally and the deployed Express API base URL in production. Next.js embeds this public value into the client bundle at build time, so rebuild after changing it. Do not put SMTP credentials in the client environment.
+
+Configure the API's `ALLOWED_ORIGINS` with the exact browser origins, including scheme and port where applicable. For example, use `http://localhost:3000` locally and the deployed portfolio origin in production. SMTP credentials, sender, and recipient belong only in the API runtime environment.
+
 ## Available Scripts
 
 ```bash
