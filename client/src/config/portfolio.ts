@@ -77,7 +77,7 @@ export const portfolioContent = {
     name: "ehsan.",
     role: "Fullstack Web Developer",
     description:
-      "A Fullstack Web Developer based in Indonesia. I craft accessible, pixel-perfect, and performant web experiences using modern technologies.",
+      "A Fullstack Web Developer based In Bangladesh. I craft accessible, pixel-perfect, and performant web experiences using modern technologies.",
     portrait: "/images/hero-portrait.png",
     portraitAlt: "Portrait of Ehsan Munna",
     resumeHref: "/resume.pdf",
@@ -255,7 +255,7 @@ export const portfolioContent = {
     description:
       "Interested in starting a project, seeking consulting, or just want to say hi? Drop me a line through the form or reach out directly.",
     email: "hello@djembar.dev",
-    location: "Bandung, Indonesia",
+    location: "Dhaka, Bangladesh",
     socials: [
       { label: "GitHub", href: "https://github.com", icon: "github" },
       {
