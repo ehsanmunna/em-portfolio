@@ -1,42 +1,42 @@
 ## Context
 
-The repository includes a `server/` directory but does not yet define a standard stack for running a Node.js Express application with MongoDB in a containerized local environment. This change creates the runtime architecture for that service pair and sets the expectations for environment variables, dependency wiring, and startup behavior.
+The repository contains a Next.js client and an Express API backed by MongoDB. The existing Compose stack covers the API and database; this design extends the local runtime to include the client and its browser-to-API configuration. Production hosting of the client remains on Vercel.
 
 ## Goals / Non-Goals
 
 **Goals:**
-- Provide a Docker Compose setup for MongoDB and a Node.js Express API.
-- Define predictable service-to-service communication and port mapping.
-- Keep local development setup portable and easy to reproduce.
+- Start the Next.js client, Express API, and MongoDB through one local Compose workflow.
+- Define predictable host ports, service readiness, and browser-to-API configuration.
+- Keep the Vercel production deployment independent from the local Compose stack.
 
 **Non-Goals:**
-- Build a full production Kubernetes deployment.
+- Package the Vercel production deployment or replace Vercel with Compose.
 - Introduce application-specific business logic or database schema beyond the required runtime support.
 - Rework the client portfolio architecture or its styling.
 
 ## Decisions
 
-### Use Docker Compose as the local runtime entrypoint
+### Use Docker Compose for the complete local runtime
 
-The backend will be launched through Docker Compose so that the MongoDB service and the API service can start together with consistent configuration. This reduces developer environment drift and makes the startup flow easier to script.
+The client, API, and MongoDB will be launched through Docker Compose so developers can start and validate the integrated application with one command. The client will be exposed on port 3000, the API on port 4000, and MongoDB will retain its existing configuration.
 
-### Standardize service communication via environment variables
+### Use a browser-resolvable API URL for the client
 
-The Express API should connect to MongoDB using environment-driven configuration such as host, port, database name, and credentials. This keeps the runtime configuration explicit and portable while allowing it to vary by environment.
+The client contact form runs in the browser, so its `NEXT_PUBLIC_API_BASE_URL` must use the host-published API address (`http://localhost:4000`), not the Compose-only service hostname. Configure the API's exact-origin allowlist for the local client origin (`http://localhost:3000`). Keep MongoDB connection settings environment-driven as they are today.
 
-### Keep the API service independent from the client
+### Keep local Compose separate from Vercel production
 
-The client app remains a separate concern. The API should expose a clear port and runtime contract without depending on the portfolio UI implementation or client build process.
+Compose is a local development workflow. Vercel continues to build and host the production client; this change does not make the client container the production deployment artifact.
 
 ## Risks / Trade-offs
 
-- [MongoDB startup timing can vary] → Add health checks or readiness waits to keep the API from starting before the database is available.
-- [If environment variables are not documented, local setup becomes fragile] → Require a clear `.env.example`-style contract and compose defaults.
-- [Over-scoping the stack could create unnecessary complexity] → Keep the setup focused on a local development runtime and a standard Express + MongoDB baseline.
+- [The browser cannot resolve Compose service hostnames] → Use the API's published localhost port in the public client URL and allow the exact local client origin in API CORS configuration.
+- [MongoDB startup timing can vary] → Retain health checks or readiness waits before API-dependent validation.
+- [Local container setup could be mistaken for production hosting] → Document Compose as local development only and keep Vercel configuration separate.
 
 ## Migration Plan
 
-- Define the Docker Compose service layout for MongoDB and the Express API.
-- Add environment configuration and container startup expectations.
-- Validate the stack boots together and the API can connect to MongoDB.
-- Keep the portfolio client unaffected and separately operable.
+- Add the client container configuration and Compose service while retaining the existing API and MongoDB services.
+- Configure and document local ports, the browser-facing API URL, and the allowed client origin.
+- Validate that all three services start and that the client can submit a contact request through the local API when mail transport is configured.
+- Vercel production deployment is unchanged; rollback by removing the client service and its container configuration from the local stack.

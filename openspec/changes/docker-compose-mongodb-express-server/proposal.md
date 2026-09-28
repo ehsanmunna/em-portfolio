@@ -1,24 +1,23 @@
 ## Why
 
-The repository currently separates the portfolio client from a server directory, but it does not define a local runtime stack for development or containerized integration. Without a consistent Docker Compose setup, the project cannot run a MongoDB-backed API in a repeatable way across machines, and the developer workflow remains manual and error-prone.
+The repository has a Next.js portfolio client and a MongoDB-backed Express API, but the local Compose stack does not start the client. Extending it to include all three processes gives developers one repeatable way to run and verify the integrated portfolio locally while leaving the Vercel production deployment path separate.
 
 ## What Changes
 
-- Add a Docker Compose setup for a local MongoDB instance and a Node.js/Express API service.
-- Define a consistent development stack that lets the server run with environment variables and service discovery.
-- Keep the client portfolio app independent while making the backend easy to start and test in a containerized environment.
-- Document the expected architecture so future implementation can follow a shared runtime contract.
+- Extend the local Docker Compose setup to start MongoDB, the Node.js/Express API, and the Next.js client.
+- Configure the client and API ports and the browser-facing API URL and origin needed for local contact-form requests.
+- Document the complete local-stack workflow while keeping Vercel production deployment outside Compose.
 
 ## Capabilities
 
 ### New Capabilities
-- `dockerized-node-stack`: A containerized local stack that runs MongoDB and the Express API together through Docker Compose.
+- `dockerized-node-stack`: A containerized local development stack that runs the portfolio client, Express API, and MongoDB together through Docker Compose.
 
 ### Modified Capabilities
 - The existing `server/` area gains a defined local runtime configuration and service wiring.
 
 ## Impact
 
-- Establishes a repeatable development environment for the backend using Docker Compose and MongoDB.
-- Makes the server easier to run, test, and debug without depending on a host-specific installation process.
-- Keeps the change scoped to local infrastructure and app runtime setup rather than redesigning the portfolio front end.
+- Updates `docker-compose.yml` and adds client container configuration and local-stack documentation.
+- Keeps the stack scoped to local development; Vercel remains the production host for the client.
+- Does not change the client or API's product behavior beyond making their existing local integration runnable through Compose.
