@@ -257,14 +257,17 @@ export const portfolioContent = {
     email: "grmunnabd@gmail.com",
     location: "Dhaka, Bangladesh",
     socials: [
-      { label: "GitHub", href: "https://github.com", icon: "github" },
+      {
+        label: "GitHub",
+        href: "https://github.com/ehsanmunna",
+        icon: "github",
+      },
       {
         label: "LinkedIn",
-        href: "https://www.linkedin.com",
+        href: "https://www.linkedin.com/in/ehsan-munna",
         icon: "linkedin",
       },
-      { label: "Twitter", href: "https://x.com", icon: "x" },
-      { label: "Dribbble", href: "https://dribbble.com", icon: "dribbble" },
+      { label: "Twitter", href: "https://x.com/ehsan85", icon: "x" },
     ] satisfies SocialLink[],
   },
   footer: {
