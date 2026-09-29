@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="400" viewBox="0 0 1400 400" fill="none">
+  <rect width="1400" height="400" fill="#111A1E"/>
+  <path d="M0 68H1400M0 332H1400" stroke="#273438"/>
+  <path d="M110 98H618V306H110Z" fill="#17252A" stroke="#405156" stroke-width="2"/>
+  <path d="M110 140H618" stroke="#405156" stroke-width="2"/>
+  <rect x="138" y="164" width="176" height="112" fill="#29413D"/>
+  <rect x="332" y="164" width="258" height="34" fill="#324148"/>
+  <rect x="332" y="210" width="258" height="18" fill="#263137"/>
+  <rect x="332" y="238" width="190" height="18" fill="#263137"/>
+  <rect x="332" y="266" width="224" height="18" fill="#263137"/>
+  <path d="M138 296H590M314 164V296" stroke="#F0A56C" stroke-width="2" stroke-dasharray="6 8"/>
+  <rect x="680" y="128" width="140" height="176" rx="4" fill="#233239" stroke="#8ABBD0" stroke-width="2"/>
+  <path d="M704 164H796M704 188H778M704 212H790M704 236H766" stroke="#8ABBD0" stroke-width="5"/>
+  <path d="M850 216H944" stroke="#F0A56C" stroke-width="4"/>
+  <path d="M926 204L944 216L926 228" stroke="#F0A56C" stroke-width="4"/>
+  <rect x="974" y="156" width="56" height="112" rx="5" fill="#1D3B36" stroke="#68D4B0" stroke-width="2"/>
+  <path d="M988 176H1016M988 190H1016M988 204H1016M988 218H1016" stroke="#8EE0C2" stroke-width="4"/>
+  <text x="1070" y="142" fill="#F0A56C" font-family="Manrope, sans-serif" font-size="16">.NET FRAMEWORK 4</text>
+  <text x="1070" y="192" fill="#EFF5F1" font-family="Manrope, sans-serif" font-size="34" font-weight="700">DESIGN + BUILD</text>
+  <text x="1070" y="228" fill="#91A5A2" font-family="Manrope, sans-serif" font-size="18">WEB APPLICATIONS</text>
+  <text x="1070" y="294" fill="#68D4B0" font-family="Manrope, sans-serif" font-size="16">TOPIC ILLUSTRATION</text>
+</svg>
