@@ -28,7 +28,12 @@ export function HeroSection() {
           <a className="button" href="#contact">
             Contact Me <ArrowUpRight aria-hidden="true" size={17} />
           </a>
-          <a className="button button-secondary" href={portfolioContent.hero.resumeHref}>
+          <a
+            className="button button-secondary"
+            href={portfolioContent.hero.resumeHref}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Download CV <ArrowDownToLine aria-hidden="true" size={17} />
           </a>
         </div>

@@ -80,7 +80,8 @@ export const portfolioContent = {
       "A Fullstack Web Developer based In Bangladesh. I craft accessible, pixel-perfect, and performant web experiences using modern technologies.",
     portrait: "/images/hero-portrait.png",
     portraitAlt: "Portrait of Ehsan Munna",
-    resumeHref: "/resume.pdf",
+    resumeHref:
+      "https://drive.google.com/file/d/1r_tsxf8aZ16_z1e808Cb5NuDPH_ywePq/view?usp=sharing",
   },
   technologyHeading: {
     title: "Technological Foundation",
