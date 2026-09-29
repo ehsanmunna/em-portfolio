@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="400" viewBox="0 0 1400 400" fill="none">
+  <rect width="1400" height="400" fill="#111A1E"/>
+  <path d="M0 332H1400" stroke="#273438"/>
+  <path d="M0 68H1400" stroke="#273438"/>
+  <path d="M96 118H510V286H96Z" fill="#17252A" stroke="#405156" stroke-width="2"/>
+  <path d="M510 202H676M676 202V138H766M676 202V266H766" stroke="#68D4B0" stroke-width="4"/>
+  <path d="M510 202H604" stroke="#F0A56C" stroke-width="4"/>
+  <rect x="128" y="150" width="176" height="104" rx="4" fill="#20353A" stroke="#68D4B0" stroke-width="2"/>
+  <path d="M152 180H280M152 202H252M152 224H268" stroke="#8FA7A6" stroke-width="5"/>
+  <text x="152" y="285" fill="#C2D2CE" font-family="Manrope, sans-serif" font-size="18">SERVICE CLIENT</text>
+  <rect x="360" y="168" width="150" height="68" rx="4" fill="#263137" stroke="#F0A56C" stroke-width="2"/>
+  <text x="388" y="210" fill="#F7C7A4" font-family="Manrope, sans-serif" font-size="20">CONTRACT</text>
+  <rect x="766" y="102" width="228" height="72" rx="4" fill="#183C36" stroke="#68D4B0" stroke-width="2"/>
+  <text x="810" y="146" fill="#B7F1DB" font-family="Manrope, sans-serif" font-size="20">SOAP ENDPOINT</text>
+  <rect x="766" y="230" width="228" height="72" rx="4" fill="#263137" stroke="#8ABBD0" stroke-width="2"/>
+  <text x="821" y="274" fill="#C7E8F2" font-family="Manrope, sans-serif" font-size="20">HTTP ENDPOINT</text>
+  <text x="1056" y="142" fill="#68D4B0" font-family="Manrope, sans-serif" font-size="16">.NET FRAMEWORK 4</text>
+  <text x="1056" y="192" fill="#EFF5F1" font-family="Manrope, sans-serif" font-size="34" font-weight="700">WCF</text>
+  <text x="1056" y="228" fill="#91A5A2" font-family="Manrope, sans-serif" font-size="18">CONNECTED SERVICES</text>
+  <text x="1056" y="294" fill="#F0A56C" font-family="Manrope, sans-serif" font-size="16">TOPIC ILLUSTRATION</text>
+</svg>
