@@ -12,12 +12,12 @@
 
 ## 3. Implement the portfolio experience
 
-- [ ] 3.1 Build the shared page shell and design-specific reusable sections to match the Figma composition and styling.
-- [ ] 3.2 Render repeated portfolio entries from configuration and connect visible navigation and calls to action to their configured destinations or actions.
-- [ ] 3.3 Implement narrow-viewport layouts that preserve the design hierarchy and keep all content usable without horizontal scrolling.
+- [x] 3.1 Build the shared page shell and design-specific reusable sections to match the Figma composition and styling.
+- [x] 3.2 Render repeated portfolio entries from configuration and connect visible navigation and calls to action to their configured destinations or actions.
+- [x] 3.3 Implement narrow-viewport layouts that preserve the design hierarchy and keep all content usable without horizontal scrolling.
 
 ## 4. Verify behavior and visual fidelity
 
-- [ ] 4.1 Compare desktop and narrow-viewport renders with the Figma design and correct material differences in layout, typography, imagery, and colors.
-- [ ] 4.2 Verify that changing site identity, theme colors, and supported content configuration updates the rendered experience without editing presentation components.
-- [ ] 4.3 Run the client lint and production build checks and resolve failures introduced by the implementation.
+- [x] 4.1 Compare desktop and narrow-viewport renders with the Figma design and correct material differences in layout, typography, imagery, and colors.
+- [x] 4.2 Verify that changing site identity, theme colors, and supported content configuration updates the rendered experience without editing presentation components.
+- [x] 4.3 Run the client lint and production build checks and resolve failures introduced by the implementation.

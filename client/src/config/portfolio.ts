@@ -168,7 +168,7 @@ export const portfolioContent = {
     title: "Turning complex problems into elegant solutions.",
     description:
       "I don't just write code; I seek to understand the core operational goals of your business and implement design-focused, scale-conscious codebases.",
-    portrait: "/images/solutions-portrait.jpg",
+    portrait: "/images/solutions-wriented-cartton.jpg",
     portraitAlt: "Ehsan Munna working at a desk",
   },
   features: [
@@ -268,7 +268,7 @@ export const portfolioContent = {
     title: "Let's Work Together",
     description:
       "Interested in starting a project, seeking consulting, or just want to say hi? Drop me a line through the form or reach out directly.",
-    email: "hello@djembar.dev",
+    email: "grmunnabd@gmail.com",
     location: "Dhaka, Bangladesh",
     socials: [
       { label: "GitHub", href: "https://github.com", icon: "github" },
