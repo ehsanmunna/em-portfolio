@@ -925,7 +925,7 @@ a.contact-method:hover {
   }
 
   .hero-portrait-wrap {
-    width: min(76vw, 320px);
+    width: 100%;
     justify-self: center;
     order: 2;
     border-radius: 26px;
