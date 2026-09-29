@@ -80,7 +80,8 @@ export const portfolioContent = {
       "A Fullstack Web Developer based In Bangladesh. I craft accessible, pixel-perfect, and performant web experiences using modern technologies.",
     portrait: "/images/hero-portrait.png",
     portraitAlt: "Portrait of Ehsan Munna",
-    resumeHref: "/resume.pdf",
+    resumeHref:
+      "https://drive.google.com/file/d/1r_tsxf8aZ16_z1e808Cb5NuDPH_ywePq/view?usp=sharing",
   },
   technologyHeading: {
     title: "Technological Foundation",
@@ -271,14 +272,17 @@ export const portfolioContent = {
     email: "grmunnabd@gmail.com",
     location: "Dhaka, Bangladesh",
     socials: [
-      { label: "GitHub", href: "https://github.com", icon: "github" },
+      {
+        label: "GitHub",
+        href: "https://github.com/ehsanmunna",
+        icon: "github",
+      },
       {
         label: "LinkedIn",
-        href: "https://www.linkedin.com",
+        href: "https://www.linkedin.com/in/ehsan-munna",
         icon: "linkedin",
       },
-      { label: "Twitter", href: "https://x.com", icon: "x" },
-      { label: "Dribbble", href: "https://dribbble.com", icon: "dribbble" },
+      { label: "Twitter", href: "https://x.com/ehsan85", icon: "x" },
     ] satisfies SocialLink[],
   },
   footer: {
