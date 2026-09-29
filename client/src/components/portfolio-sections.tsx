@@ -108,8 +108,8 @@ export function ProjectsSection() {
               <Image
                 src={project.image}
                 alt={project.imageAlt}
-                width={1584}
-                height={672}
+                width={1400}
+                height={400}
                 sizes="(max-width: 760px) 100vw, (max-width: 1100px) 45vw, 30vw"
               />
             </div>

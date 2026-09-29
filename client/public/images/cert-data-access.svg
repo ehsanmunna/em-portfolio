@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="400" viewBox="0 0 1400 400" fill="none">
+  <rect width="1400" height="400" fill="#111A1E"/>
+  <path d="M0 68H1400M0 332H1400" stroke="#273438"/>
+  <rect x="100" y="112" width="224" height="176" rx="4" fill="#1C292D" stroke="#8ABBD0" stroke-width="2"/>
+  <path d="M100 160H324M100 208H324M100 256H324" stroke="#405156" stroke-width="2"/>
+  <path d="M156 112V288M212 112V288M268 112V288" stroke="#405156" stroke-width="2"/>
+  <rect x="372" y="154" width="220" height="92" rx="4" fill="#263137" stroke="#F0A56C" stroke-width="2"/>
+  <text x="414" y="192" fill="#F7C7A4" font-family="Manrope, sans-serif" font-size="18">DATA ACCESS</text>
+  <text x="414" y="220" fill="#91A5A2" font-family="Manrope, sans-serif" font-size="15">ADO.NET / ORM</text>
+  <path d="M324 200H372M592 200H686" stroke="#68D4B0" stroke-width="4"/>
+  <path d="M668 188L686 200L668 212" stroke="#68D4B0" stroke-width="4"/>
+  <path d="M724 126C724 108 786 94 862 94C938 94 1000 108 1000 126V268C1000 286 938 300 862 300C786 300 724 286 724 268V126Z" fill="#17322F" stroke="#68D4B0" stroke-width="2"/>
+  <path d="M724 126C724 144 786 158 862 158C938 158 1000 144 1000 126M724 174C724 192 786 206 862 206C938 206 1000 192 1000 174M724 222C724 240 786 254 862 254C938 254 1000 240 1000 222" stroke="#68D4B0" stroke-width="2"/>
+  <text x="1054" y="142" fill="#8ABBD0" font-family="Manrope, sans-serif" font-size="16">.NET FRAMEWORK 4</text>
+  <text x="1054" y="192" fill="#EFF5F1" font-family="Manrope, sans-serif" font-size="34" font-weight="700">DATA ACCESS</text>
+  <text x="1054" y="228" fill="#91A5A2" font-family="Manrope, sans-serif" font-size="18">MODELS TO STORAGE</text>
+  <text x="1054" y="294" fill="#F0A56C" font-family="Manrope, sans-serif" font-size="16">TOPIC ILLUSTRATION</text>
+</svg>
