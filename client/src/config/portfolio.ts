@@ -194,25 +194,39 @@ export const portfolioContent = {
   },
   experience: [
     {
-      period: "2023 - Present",
-      company: "Alpha Tech, Jakarta",
-      title: "Senior Frontend Engineer",
+      period: "2025 Aug - Present",
+      company: "Xtroit",
+      title: "Senior Software Engineer",
       description:
-        "Leading a team of 4 developers migrating legacy PHP systems to unified Next.js architectures, boosting core web vitals by 40%.",
+        "Leading full-stack product engineering with Angular and .NET, modernizing deployments, mentoring junior developers, and optimizing production performance and stability.",
     },
     {
-      period: "2021 - 2023",
-      company: "InnoLabs Studio",
-      title: "Fullstack Web Developer",
+      period: "2022 Jun - 2025 Jul",
+      company: "Surbana Technologies Pte. Ltd.",
+      title: "Senior Software Engineer",
       description:
-        "Designed, programmed, and shipped over 12 client projects using Postgres, Express, and React ecosystems.",
+        "Built multi-tenant enterprise platforms, optimized Angular architecture with lazy loading, and engineered RabbitMQ and SignalR workflows for scalable data processing and live backend communication.",
     },
     {
-      period: "2019 - 2021",
-      company: "PixelCraft Agency",
-      title: "Frontend Developer",
+      period: "2021 Aug - 2022 May",
+      company: "SoftBD Ltd.",
+      title: "Software Engineer",
       description:
-        "Implemented responsive web interfaces from high-fidelity Figma files, guaranteeing total semantic accuracy.",
+        "Delivered responsive learning and e-commerce applications using Angular, React, and Node.js while developing full-stack features and service integrations across user-facing products.",
+    },
+    {
+      period: "2019 Dec - 2021 Jul",
+      company: "CoKreates Limited",
+      title: "Senior Programmer (Angular)",
+      description:
+        "Developed Angular-based business applications and stabilized long-running sessions by resolving memory leak and subscription lifecycle issues in enterprise web products.",
+    },
+    {
+      period: "2014 May - 2019 Nov",
+      company: "Daffodil International University - Software Section",
+      title: "Front-End Developer",
+      description:
+        "Rebuilt legacy jQuery and .NET MVC systems into Angular single-page applications, developed REST services with Node.js and Express, and maintained university enterprise systems and ERP modules.",
     },
   ] satisfies Experience[],
   certificationHeading: {
