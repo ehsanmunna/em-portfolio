@@ -11,8 +11,8 @@ function Brand() {
           className="brand-image"
           src={siteConfig.logo.src}
           alt={siteConfig.logo.alt}
-          width={40}
-          height={40}
+          width={32}
+          height={32}
         />
       ) : (
         <span className="brand-mark" aria-hidden="true">

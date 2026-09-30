@@ -277,7 +277,7 @@ export const portfolioContent = {
     ] satisfies SocialLink[],
   },
   footer: {
-    copyright: "© 2025 Djembar. All rights reserved.",
+    // copyright: "© 2026 EM stack. All rights reserved.",
     links: [
       { label: "Privacy Policy", href: "#contact" },
       { label: "Terms of Service", href: "#contact" },

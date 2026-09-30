@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "Full-stack web developer creating accessible, performant digital experiences.",
   logo: {
-    src: null as string | null,
+    src: "/images/em-logo-32.png" as string | null,
     mark: "EM",
     alt: "Ehsan Munna",
   },
