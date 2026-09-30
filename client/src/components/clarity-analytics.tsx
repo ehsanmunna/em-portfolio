@@ -70,8 +70,8 @@ export function ClarityAnalytics() {
       <div className="clarity-banner-copy">
         <p className="clarity-banner-title">Help improve this site</p>
         <p className="clarity-banner-text">
-          We use Microsoft Clarity to understand visits (clicks, scrolls) and
-          improve usability. It runs only if you accept.
+          We observe to understand visits (clicks, scrolls) and improve
+          usability. It runs only if you accept.
           {status ? ` Current choice: ${status}.` : ""}
         </p>
       </div>
