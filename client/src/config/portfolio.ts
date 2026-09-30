@@ -10,7 +10,7 @@ export type IconKey =
   | "layout"
   | "gauge";
 
-export type SocialIconKey = "github" | "linkedin" | "x" | "dribbble";
+export type SocialIconKey = "github" | "linkedin" | "x" | "facebook" | "dribbble";
 
 export type NavigationItem = {
   label: string;
@@ -269,6 +269,11 @@ export const portfolioContent = {
         icon: "linkedin",
       },
       { label: "Twitter", href: "https://x.com/ehsan85", icon: "x" },
+      {
+        label: "Facebook",
+        href: "https://www.facebook.com/ehsanmunna",
+        icon: "facebook",
+      },
     ] satisfies SocialLink[],
   },
   footer: {

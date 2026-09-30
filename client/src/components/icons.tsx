@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import {
   FaDribbble,
+  FaFacebook,
   FaGithub,
   FaLinkedinIn,
   FaXTwitter,
@@ -36,6 +37,7 @@ const socialIcons: Record<SocialIconKey, IconType> = {
   github: FaGithub,
   linkedin: FaLinkedinIn,
   x: FaXTwitter,
+  facebook: FaFacebook,
   dribbble: FaDribbble,
 };
 
