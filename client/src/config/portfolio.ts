@@ -139,20 +139,20 @@ export const portfolioContent = {
   projects: [
     {
       category: "Fullstack Application",
-      title: "Fintech Dashboard System",
+      title: "Real State Dashboard System",
       description:
-        "A real-time financial tracking and forecasting dashboard, featuring multiple charts and data grids.",
+        "A real estate dashboard for tracking property listings, market trends, and sales performance with interactive charts and data grids.",
       image: "/images/project-fintech.jpg",
       imageAlt: "Fintech dashboard project preview",
       tags: ["Next.js", "TypeScript", "Tailwind", "Recharts"],
     },
     {
       category: "UI Implementation",
-      title: "Task Management SaaS Workspace",
+      title: "e-commarce SaaS website",
       description:
         "Collaborative project management tool built with kanban boards, active timeline indicators, and calendar integration.",
-      image: "/images/project-task-management.jpg",
-      imageAlt: "Task management workspace project preview",
+      image: "/images/ecommerce-sass.jpg",
+      imageAlt: "E-commerce SaaS website project preview",
       tags: ["React", "Framer Motion", "Tailwind", "Zustand"],
     },
     {
