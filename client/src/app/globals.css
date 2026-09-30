@@ -1122,3 +1122,73 @@ a.contact-method:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+.clarity-banner {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  max-width: 960px;
+  margin-inline: auto;
+  padding: 18px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  box-shadow: 0 18px 50px rgb(0 0 0 / 35%);
+}
+
+.clarity-banner-copy {
+  min-width: min(100%, 420px);
+  flex: 1 1 320px;
+}
+
+.clarity-banner-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.clarity-banner-text {
+  margin: 6px 0 0;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.clarity-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.clarity-banner-link {
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.clarity-banner-link:hover {
+  color: var(--color-foreground);
+}
+
+.footer-cookie-settings {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.footer-cookie-settings:hover {
+  color: var(--color-foreground);
+}

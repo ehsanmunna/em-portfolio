@@ -9,6 +9,7 @@ import {
 import { portfolioContent } from "@/config/portfolio";
 import { siteConfig } from "@/config/site";
 import { ContactForm } from "@/components/contact-form";
+import { CookieSettingsButton } from "@/components/cookie-settings-button";
 import { Icon, SocialIcon } from "@/components/icons";
 import { SectionHeading } from "@/components/section-heading";
 
@@ -267,6 +268,7 @@ export function SiteFooter() {
               {link.label} <ArrowUpRight aria-hidden="true" size={13} />
             </a>
           ))}
+          <CookieSettingsButton />
           <span className="footer-name">{siteConfig.name}</span>
         </nav>
       </div>
