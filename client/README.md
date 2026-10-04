@@ -54,11 +54,27 @@ npm run dev
 
 Open http://localhost:3000 in your browser to view the app.
 
-## Contact API Configuration
+## Contact Form Configuration (EmailJS)
 
-Set `NEXT_PUBLIC_API_BASE_URL` in the client environment before running `npm run dev` or `npm run build`. Use `http://localhost:4000` locally and the deployed Express API base URL in production. Next.js embeds this public value into the client bundle at build time, so rebuild after changing it. Do not put SMTP credentials in the client environment.
+Contact inquiries are sent directly from the browser through EmailJS. No backend contact endpoint is required.
 
-Configure the API's `ALLOWED_ORIGINS` with the exact browser origins, including scheme and port where applicable. For example, use `http://localhost:3000` locally and the deployed portfolio origin in production. SMTP credentials, sender, and recipient belong only in the API runtime environment.
+Set the following public values in the client environment before running `npm run dev` or `npm run build`:
+
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+
+See `client/.env.example` for blank placeholders. Next.js embeds `NEXT_PUBLIC_*` values into the client bundle at build time, so rebuild/redeploy the client after changing them. Do not commit secrets; values are public identifiers by design.
+
+EmailJS setup:
+
+1. Create an EmailJS service connected to your mailbox and note the service ID.
+2. Create a template addressed to the portfolio owner address with params `name`, `email`, `message`, and `reply_to` (reply-to set to the visitor email).
+3. Copy the public key from EmailJS dashboard account settings.
+4. In the EmailJS dashboard, restrict allowed sending domains/senders to your portfolio origins.
+5. Deploy the client with the three `NEXT_PUBLIC_EMAILJS_*` values and send a staged inquiry to verify success and failure states.
+
+Note: `POST /api/contact` has been removed from the Express API and returns 404. Contact delivery no longer uses SMTP, CORS allowlists, or server rate limiting.
 
 ## Available Scripts
 
