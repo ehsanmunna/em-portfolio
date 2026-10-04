@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/manrope";
 import { siteConfig, themeStyle } from "@/config/site";
+import { WhatsappFloat } from "@/components/whatsapp-float";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,7 +14,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" style={themeStyle}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsappFloat />
+      </body>
     </html>
   );
 }
