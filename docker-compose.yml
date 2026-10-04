@@ -42,14 +42,6 @@ services:
       MONGO_USERNAME: ${MONGO_USERNAME:-portfolio_admin}
       MONGO_PASSWORD: ${MONGO_PASSWORD:-portfolio_password}
       MONGO_URI: ${MONGO_URI:-mongodb://portfolio_admin:portfolio_password@mongodb:27017/portfolio?authSource=admin}
-      SMTP_HOST: ${SMTP_HOST:-}
-      SMTP_PORT: ${SMTP_PORT:-587}
-      SMTP_SECURE: ${SMTP_SECURE:-false}
-      SMTP_USER: ${SMTP_USER:-}
-      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
-      CONTACT_TO: ${CONTACT_TO:-}
-      MAIL_FROM: ${MAIL_FROM:-}
-      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:3000}
       NODE_ENV: development
     healthcheck:
       test:
