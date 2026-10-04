@@ -1,14 +1,19 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import emailjs from "@emailjs/browser";
 import { Send } from "lucide-react";
 
 type ContactFormProps = {
-  apiBaseUrl?: string;
+  serviceId?: string;
+  templateId?: string;
+  publicKey?: string;
 };
 
 export function ContactForm({
-  apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL,
+  serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+  templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+  publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
 }: ContactFormProps = {}) {
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,28 +27,42 @@ export function ContactForm({
     const form = event.currentTarget;
     const formData = new FormData(form);
     const submission = {
-      name: String(formData.get("name") ?? ""),
-      email: String(formData.get("email") ?? ""),
-      message: String(formData.get("message") ?? ""),
+      name: String(formData.get("name") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      message: String(formData.get("message") ?? "").trim(),
     };
+
+    if (
+      !submission.name ||
+      !submission.email ||
+      !submission.message ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(submission.email) ||
+      submission.name.length > 120 ||
+      submission.email.length > 254 ||
+      submission.message.length > 5000
+    ) {
+      return;
+    }
 
     setIsSubmitting(true);
     setStatus("Sending your message...");
 
     try {
-      if (!apiBaseUrl) {
-        throw new Error("Contact API URL is not configured");
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS configuration is missing");
       }
 
-      const response = await fetch(`${apiBaseUrl.replace(/\/+$/, "")}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(submission),
-      });
-
-      if (response.status !== 202) {
-        throw new Error("Contact request was not accepted");
-      }
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: submission.name,
+          email: submission.email,
+          message: submission.message,
+          reply_to: submission.email,
+        },
+        { publicKey },
+      );
 
       form.reset();
       setStatus("Your message was sent successfully.");
@@ -58,7 +77,13 @@ export function ContactForm({
     <form className="contact-form" onSubmit={handleSubmit} aria-busy={isSubmitting}>
       <label>
         Name
-        <input autoComplete="name" name="name" placeholder="Enter your name" required />
+        <input
+          autoComplete="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+          maxLength={120}
+        />
       </label>
       <label>
         Email Address
@@ -68,11 +93,18 @@ export function ContactForm({
           placeholder="your.email@example.com"
           required
           type="email"
+          maxLength={254}
         />
       </label>
       <label>
         Message
-        <textarea name="message" placeholder="How can I help you?" required rows={4} />
+        <textarea
+          name="message"
+          placeholder="How can I help you?"
+          required
+          rows={4}
+          maxLength={5000}
+        />
       </label>
       <button className="button form-submit" type="submit" disabled={isSubmitting}>
         {isSubmitting ? "Sending..." : "Send Message"}
