@@ -774,6 +774,32 @@ a.contact-method:hover {
   font-size: 12px;
 }
 
+.whatsapp-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 35%);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgb(0 0 0 / 42%);
+}
+
+.whatsapp-float:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
 .site-footer {
   border-top: 1px solid rgb(148 163 184 / 12%);
 }

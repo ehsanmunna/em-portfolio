@@ -63,6 +63,12 @@ export type SocialLink = {
   icon: SocialIconKey;
 };
 
+export type WhatsappContact = {
+  number: string;
+  defaultMessage: string;
+  label: string;
+};
+
 export const portfolioContent = {
   navigation: [
     { label: "Home", href: "#home" },
@@ -257,6 +263,11 @@ export const portfolioContent = {
       "Interested in starting a project, seeking consulting, or just want to say hi? Drop me a line through the form or reach out directly.",
     email: "grmunnabd@gmail.com",
     location: "Dhaka, Bangladesh",
+    whatsapp: {
+      number: "01717463510",
+      defaultMessage: "Hi! I found your portfolio and would like to chat.",
+      label: "Chat on WhatsApp",
+    } satisfies WhatsappContact,
     socials: [
       {
         label: "GitHub",
