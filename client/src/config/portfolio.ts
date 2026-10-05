@@ -264,7 +264,7 @@ export const portfolioContent = {
     email: "grmunnabd@gmail.com",
     location: "Dhaka, Bangladesh",
     whatsapp: {
-      number: "01717463510",
+      number: "+8801717463510",
       defaultMessage: "Hi! I found your portfolio and would like to chat.",
       label: "Chat on WhatsApp",
     } satisfies WhatsappContact,
