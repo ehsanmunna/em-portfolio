@@ -84,7 +84,7 @@ export const portfolioContent = {
     name: "ehsan.",
     role: "Fullstack Web Developer",
     description:
-      "A Fullstack Web Developer based In Bangladesh. I craft accessible, pixel-perfect, and performant web experiences using modern technologies.",
+      "I have 10+ years of experience building enterprise web applications, APIs and data-driven systems, with a strong focus on Angular, React, TypeScript, .NET, Node.js and modern backend architecture.",
     portrait: "/images/hero-portrait.png",
     portraitAlt: "Portrait of Ehsan Munna",
     resumeHref:
@@ -202,25 +202,76 @@ export const portfolioContent = {
   },
   experience: [
     {
-      period: "2023 - Present",
-      company: "Alpha Tech, Jakarta",
-      title: "Senior Frontend Engineer",
+      period: "2025 (Aug) - 2026 (Sep)",
+      company: "Xtroit, Singapore",
+      title: "Senior Software Engineer",
       description:
-        "Leading a team of 4 developers migrating legacy PHP systems to unified Next.js architectures, boosting core web vitals by 40%.",
+        ` ● Full-Stack Engineering: Architected scalable web applications and high-performance REST APIs leveraging Angular and .NET pipelines. 
+          ● Containerization: Containerized full-stack applications using Docker to streamline development workflows, ensure environment consistency, and simplify deployment processes.
+          ● Frontend Refactoring & Deployment: Led zero-downtime production migrations to the latest Angular version, executing critical breaking-change refactoring and dependency modernization. 
+          ● Reviewed pull requests and mentored two junior developers on Angular best practices 
+          ● Performance Optimization: Drastically reduced production bundle sizes and enhanced runtime stability while ensuring seamless, continuous daily business operations. `,
     },
     {
-      period: "2021 - 2023",
-      company: "InnoLabs Studio",
-      title: "Fullstack Web Developer",
+      period: "2022 (Jun) - 2025 (Jul)",
+      company: "Surbana Technologies Pte. Ltd., (Dhaka, Bangladesh)",
+      title: "Senior Software Engineer",
       description:
-        "Designed, programmed, and shipped over 12 client projects using Postgres, Express, and React ecosystems.",
+        `
+        ● Frontend Optimization: Spearheaded a comprehensive architectural restructuring and
+modularized core Angular components using lazy loading, cutting production bundle size
+by ~50% and reducing page load time by 30%.
+      ● Scalable Feature Engineering: Built an end-to-end Daily Activity tracking system 
+      tailored for multi-tenant data isolation, featuring paginated infinite scroll and serving 
+      optimized thumbnail images (reducing average image payload by ~97%, from 2MB to 
+      50KB) backed by Azure Blob Storage. 
+      ● Data Pipeline Orchestration: Engineered high-performance ETL processes and 
+      multi-format parsing engines to securely ingest, map, and synchronize external tracking 
+      datasets (Excel, MPP, P6) into primary system databases. 
+      ● Event-Driven Architecture: Engineered asynchronous microservices and distributed 
+      event-driven workflows using RabbitMQ, MassTransit, and SignalR for real-time 
+      bi-directional backend communication, while integrating frontend WebSockets for live 
+      updates; refactored file processing to cut memory usage by ~60% for large-file handling, 
+      ensuring fault-tolerant, decoupled communication across systems. 
+        `,
     },
     {
-      period: "2019 - 2021",
-      company: "PixelCraft Agency",
-      title: "Frontend Developer",
+      period: "2021 (Aug) - 2022 (May)",
+      company: "SoftBD Ltd., (Dhaka, Bangladesh)",
+      title: "Software Engineer",
       description:
-        "Implemented responsive web interfaces from high-fidelity Figma files, guaranteeing total semantic accuracy.",
+        `
+        ● Engineered a responsive scheduling module for the online learning portal by integrating an external calendar library, course tracking, and operational management. 
+        ● Developed full-stack e-commerce applications using Angular, Node.js, and JavaScript. 
+        ● Built and integrated frontend components and backend services.
+        `,
+    },
+    {
+      period: "2021 (Aug) - 2022 (May)",
+      company: "CoKreates Limited, (Dhaka, Bangladesh)",
+      title: "Senior Programmer (Angular)",
+      description:
+        `
+        ● Developed and maintained Angular-based frontend applications, resolving memory leak issues from ~120 unmanaged RxJS subscriptions across 30+ components, stabilizing long-session memory usage.. 
+        ● Worked on accounting and business application modules. 
+        `,
+    },
+    {
+      period: "2014 (May) - 2019 (Nov)",
+      company: "Daffodil International University - Software Section, (Dhaka, Bangladesh)",
+      title: "Front-End Developer",
+      description:
+        `
+        ● Architecture & Migration: Re-engineered the legacy jQuery and .NET MVC Treatment 
+        Management System into a high-performance Angular single-page application powered 
+        by RESTful APIs. 
+        ● Backend Engineering: Deployed core backend services for the DIU-Employee 
+        Application using Node.js, Express.js, and Sequelize ORM to secure enterprise 
+        transactions. 
+        ● ERP Contribution: Maintained and optimized scalable web and mobile features across 
+        university enterprise systems, including Bill Budget and ERP Procurement platforms. 
+
+        `,
     },
   ] satisfies Experience[],
   certificationHeading: {
