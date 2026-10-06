@@ -268,7 +268,7 @@ export const portfolioContent = {
       number: "+8801717463510",
       defaultMessage: "Hi! I found your portfolio and would like to chat.",
       label: "Chat on WhatsApp",
-      showWhatsapp: true,
+      showWhatsapp: false,
     } satisfies WhatsappContact,
     socials: [
       {
