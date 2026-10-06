@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/manrope";
 import { siteConfig, themeStyle } from "@/config/site";
+import { portfolioContent } from "@/config/portfolio";
 import { WhatsappFloat } from "@/components/whatsapp-float";
 import "./globals.css";
 
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" style={themeStyle}>
       <body>
         {children}
-        <WhatsappFloat />
+        {portfolioContent.contact.whatsapp.showWhatsapp && <WhatsappFloat />}
       </body>
     </html>
   );
