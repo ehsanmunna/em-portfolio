@@ -335,7 +335,7 @@ by ~50% and reducing page load time by 30%.
       { label: "Twitter", href: "https://x.com/ehsan85", icon: "x" },
       {
         label: "Facebook",
-        href: "https://www.facebook.com/ehsanmunna",
+        href: "https://www.facebook.com/emstack.bd",
         icon: "facebook",
       },
     ] satisfies SocialLink[],
