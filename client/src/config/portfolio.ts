@@ -319,7 +319,7 @@ by ~50% and reducing page load time by 30%.
       number: "+8801717463510",
       defaultMessage: "Hi! I found your portfolio and would like to chat.",
       label: "Chat on WhatsApp",
-      showWhatsapp: false,
+      showWhatsapp: true,
     } satisfies WhatsappContact,
     socials: [
       {
