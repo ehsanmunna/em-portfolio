@@ -1,0 +1,1 @@
+framwork: Next.js 16.3.6 with React 19.2.8 (App Router)
